@@ -89,7 +89,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -101,13 +101,25 @@ p{margin:0}
 
 /* Nav */
 header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.nav .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
 .logo{font-family:var(--font-display);font-weight:800;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:10px}
 .logo span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);font-size:15px}
 .nav nav{display:flex;gap:4px;flex-wrap:wrap}
 .nav nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);padding:8px 12px;border-radius:8px}
 .nav nav a:hover{color:var(--ink);background:var(--surface)}
-@media (max-width:720px){.nav nav a:not(.cta){display:none}}
+.menu-btn{display:none}
+@media (max-width:760px){
+  .menu-btn{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 11px;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer}
+  .menu-btn span{display:block;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s}
+  .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav nav{display:none;position:absolute;left:0;right:0;top:64px;flex-direction:column;gap:2px;padding:10px 16px 16px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -18px rgba(0,0,0,.35)}
+  .nav nav.open{display:flex}
+  .nav nav a{font-size:17px;padding:14px 12px}
+  .nav nav a.cta{text-align:center;margin-top:6px}
+  .logo{font-size:18px}
+}
 .nav nav a.cta{color:var(--bg);background:var(--ink)}
 
 /* Hero */
@@ -243,6 +255,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .wa-float:hover{transform:translateY(-2px)}
 .wa-float svg{width:26px;height:26px;flex:none}
 @media (max-width:520px){.wa-float span{display:none}.wa-float{padding:12px}}
+/* Phone sizing */
+@media (max-width:600px){
+  body{font-size:16px}
+  section{padding:56px 0}
+  .sec-head{margin-bottom:28px}
+  .hero{padding:36px 0 48px}
+  .hero h1{margin:18px 0 8px}
+  .lede{font-size:16.5px}
+  .hero-actions .btn{flex:1 1 auto;justify-content:center}
+  .facts{gap:18px;margin-top:28px}
+  .facts div{flex:1 1 100%}
+  .panel pre{font-size:10.6px;line-height:1.65;padding:16px 14px;min-height:0}
+  .panel .file{padding:0 16px 14px}
+  .tabs button{padding:6px 8px;font-size:11.5px}
+  .stack article{padding:20px}
+  .case{padding:24px 0}
+  .case .path{justify-self:start}
+  .oss{margin-top:40px}
+  .repo{padding:20px}
+  .graph{padding-left:34px}
+  .node{padding-bottom:30px}
+  .step{padding:20px}.step::before{margin-bottom:14px}
+  .soft article{grid-template-columns:34px 1fr;padding:18px 0}
+  .contact-grid{gap:28px}
+  .links .val{font-size:14.5px;word-break:normal;overflow-wrap:anywhere}
+  .links a,.links button{padding:15px 0}
+  .wa-float{right:14px;bottom:14px}
+}
 </style>
 </head>
 <body>
@@ -250,7 +290,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top"><span>MA</span>Muhammad Adnan</a>
-    <nav aria-label="Sections">
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Sections" id="site-nav">
       <a href="#about">About</a>
       <a href="#stack">Stack</a>
       <a href="#soft-skills">Soft skills</a>
@@ -546,37 +587,40 @@ const CONTACT = [
 
 const SNIPPETS = {
   objc: { file:"LoginViewController.m", note:"legacy · still shipping", code:
-`<span class="c">// Objective-C: where many enterprise apps began</span>
+`<span class="c">// Objective-C: where many apps began</span>
 <span class="k">- (void)</span><span class="f">loginTapped</span>:(<span class="t">UIButton</span> *)sender {
-    [<span class="k">self</span>.<span class="t">authService</span> loginWithEmail:<span class="k">self</span>.email.text
-                         password:<span class="k">self</span>.password.text
-                       completion:^(<span class="t">User</span> *user, <span class="t">NSError</span> *error) {
-        <span class="k">dispatch_async</span>(dispatch_get_main_queue(), ^{
-            <span class="k">if</span> (error) { [<span class="k">self</span> showError:error]; <span class="k">return</span>; }
-            [<span class="k">self</span> openHomeFor:user];
-        });
-    }];
+  [<span class="k">self</span>.<span class="t">auth</span> loginWithEmail:<span class="k">self</span>.email.text
+               password:<span class="k">self</span>.pass.text
+             completion:^(<span class="t">User</span> *user,
+                          <span class="t">NSError</span> *err) {
+    <span class="k">dispatch_async</span>(dispatch_get_main_queue(), ^{
+      <span class="k">if</span> (err) { [<span class="k">self</span> showError:err]; <span class="k">return</span>; }
+      [<span class="k">self</span> openHomeFor:user];
+    });
+  }];
 }`},
   swift: { file:"LoginViewController.swift", note:"modern native", code:
 `<span class="c">// Swift: same feature, safer and shorter</span>
 <span class="k">@IBAction func</span> <span class="f">loginTapped</span>(<span class="k">_</span> sender: <span class="t">UIButton</span>) {
-    <span class="t">Task</span> {
-        <span class="k">do</span> {
-            <span class="k">let</span> user = <span class="k">try await</span> authService.login(
-                email: email.text ?? <span class="s">""</span>,
-                password: password.text ?? <span class="s">""</span>)
-            openHome(<span class="k">for</span>: user)
-        } <span class="k">catch</span> { showError(error) }
+  <span class="t">Task</span> {
+    <span class="k">do</span> {
+      <span class="k">let</span> user = <span class="k">try await</span> auth.login(
+        email: email.text ?? <span class="s">""</span>,
+        password: pass.text ?? <span class="s">""</span>)
+      openHome(<span class="k">for</span>: user)
+    } <span class="k">catch</span> {
+      showError(error)
     }
+  }
 }`},
   dart: { file:"login_screen.dart", note:"one codebase · iOS + Android", code:
-`<span class="c">// Flutter: one implementation for both platforms</span>
+`<span class="c">// Flutter: one codebase, iOS + Android</span>
 <span class="t">Future</span>&lt;<span class="k">void</span>&gt; <span class="f">_onLogin</span>() <span class="k">async</span> {
   <span class="k">try</span> {
-    <span class="k">final</span> user = <span class="k">await</span> ref.read(authProvider).login(
-      email: _email.text,
-      password: _password.text,
-    );
+    <span class="k">final</span> user = <span class="k">await</span> ref
+        .read(authProvider)
+        .login(email: _email.text,
+               password: _pass.text);
     <span class="k">if</span> (!mounted) <span class="k">return</span>;
     context.go(<span class="s">'/home'</span>, extra: user);
   } <span class="k">on</span> <span class="t">AuthException</span> <span class="k">catch</span> (e) {
@@ -621,6 +665,11 @@ CONTACT.forEach(c => {
   });
   links.appendChild(el);
 });
+const menuBtn=document.getElementById("menu-btn"), siteNav=document.getElementById("site-nav");
+function setMenu(open){siteNav.classList.toggle("open",open);menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"Close menu":"Open menu");}
+menuBtn.addEventListener("click",()=>setMenu(!siteNav.classList.contains("open")));
+siteNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false);});
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
