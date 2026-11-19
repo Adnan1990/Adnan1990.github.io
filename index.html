@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Adnan | iOS (Swift &amp; Objective-C), Android &amp; Flutter Developer</title>
+<meta name="description" content="Muhammad Adnan is a Software Engineer who builds native iOS (Swift, Objective-C) and native Android (Kotlin, Java) apps from scratch, plus cross-platform Flutter apps, enterprise app maintenance and native-to-Flutter modernization.">
+<meta name="keywords" content="Muhammad Adnan, iOS developer, Swift developer, Objective-C, Flutter developer, Android developer, mobile app developer Pakistan, cross-platform developer, Clean Architecture, Azure DevOps, hire Flutter developer">
+<meta name="author" content="Muhammad Adnan">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0E1A2B">
+<link rel="canonical" href="https://adnan1990.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="og-image.png">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Muhammad Adnan">
+<meta property="og:title" content="Muhammad Adnan | iOS (Swift &amp; Objective-C), Android &amp; Flutter Developer">
+<meta property="og:description" content="Native iOS, Android and Flutter engineer. Enterprise app maintenance and native-to-Flutter modernization.">
+<meta property="og:url" content="https://adnan1990.github.io/">
+<meta property="og:image" content="https://adnan1990.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Muhammad Adnan, Native iOS (Swift and Objective-C), Android and Flutter developer">
+<meta property="profile:first_name" content="Muhammad">
+<meta property="profile:last_name" content="Adnan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Adnan | iOS (Swift &amp; Objective-C), Android &amp; Flutter Developer">
+<meta name="twitter:description" content="Native iOS, Android and Flutter engineer. Enterprise app maintenance and native-to-Flutter modernization.">
+<meta name="twitter:image" content="https://adnan1990.github.io/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "https://adnan1990.github.io/",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Muhammad Adnan",
+    "jobTitle": "Software Engineer & Application Developer",
+    "description": "Mobile engineer specializing in native iOS (Swift, Objective-C), Android and Flutter development.",
+    "url": "https://adnan1990.github.io/",
+    "image": "https://adnan1990.github.io/og-image.png",
+    "email": "mailto:muhammad.adnan1990@gmail.com",
+    "telephone": "+923027885074",
+    "sameAs": [
+      "https://www.linkedin.com/in/muhammad-adnan-a3431820/",
+      "https://github.com/Adnan1990",
+      "https://www.facebook.com/adnan.CatchMeIfYouCan",
+      "https://wa.me/923027885074"
+    ],
+    "knowsAbout": ["iOS development","Swift","Objective-C","SwiftUI","UIKit","Android development","Kotlin","Flutter","Dart","Clean Architecture","MVVM","Cross-platform mobile development","Azure DevOps","Git","AI-assisted development"]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a "migration log". Hero = one feature shown in Obj-C → Swift → Flutter.
+   Career = a git-style branch graph. Ink navy + signal orange, cobalt as the quiet second voice. */
+:root{
+  --bg:#EEF1F5;
+  --surface:#FFFFFF;
+  --ink:#0E1A2B;
+  --muted:#5A6778;
+  --line:#D5DBE4;
+  --accent:#F2561D;
+  --cobalt:#2B54E0;
+  --code-bg:#0E1A2B;
+  --code-ink:#DCE3EE;
+  --font-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --wrap:1160px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A111D; --surface:#111B2B; --ink:#E7ECF4; --muted:#93A0B3; --line:#223047;
+    --accent:#FF6B35; --cobalt:#7C9BFF; --code-bg:#060B14; --code-ink:#DCE3EE;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A111D; --surface:#111B2B; --ink:#E7ECF4; --muted:#93A0B3; --line:#223047;
+  --accent:#FF6B35; --cobalt:#7C9BFF; --code-bg:#060B14; --code-ink:#DCE3EE;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.05}
+p{margin:0}
+.mono{font-family:var(--font-mono)}
+
+/* Nav */
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font-family:var(--font-display);font-weight:800;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);font-size:15px}
+.nav nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);padding:8px 12px;border-radius:8px}
+.nav nav a:hover{color:var(--ink);background:var(--surface)}
+@media (max-width:720px){.nav nav a:not(.cta){display:none}}
+.nav nav a.cta{color:var(--bg);background:var(--ink)}
+
+/* Hero */
+.hero{padding:clamp(48px,8vw,96px) 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13px;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:6px 12px;border-radius:999px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+.hero h1{font-size:clamp(48px,8vw,104px);font-weight:800;letter-spacing:-0.035em;margin:22px 0 8px}
+.hero h1 .last{color:var(--accent)}
+.role{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);font-weight:600;color:var(--ink);margin-bottom:18px}
+.role em{font-style:normal;color:var(--cobalt)}
+.lede{color:var(--muted);max-width:56ch;font-size:18px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;padding:13px 20px;border-radius:10px;border:1.5px solid var(--ink);cursor:pointer;font-family:var(--font-body);transition:transform .15s ease, background .15s}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.facts div{font-size:14px;color:var(--muted)}
+.facts b{display:block;font-family:var(--font-display);font-size:22px;color:var(--ink);font-weight:700}
+
+/* Code migration panel */
+.panel{background:var(--code-bg);color:var(--code-ink);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(14,26,43,.55);border:1px solid color-mix(in srgb,var(--code-ink) 10%,transparent)}
+.panel-top{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08);gap:10px;flex-wrap:wrap}
+.dots{display:flex;gap:6px}.dots i{width:11px;height:11px;border-radius:50%;background:#2A3A52}
+.tabs{display:flex;gap:4px;background:rgba(255,255,255,.05);padding:3px;border-radius:9px}
+.tabs button{font-family:var(--font-mono);font-size:12px;color:#8C9AB0;background:none;border:0;padding:6px 10px;border-radius:7px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:#FF6B35;color:#0A111D;font-weight:600}
+.panel pre{margin:0;padding:20px 22px;font-family:var(--font-mono);font-size:13.5px;line-height:1.7;min-height:290px;overflow-x:auto;white-space:pre}
+.panel .file{font-family:var(--font-mono);font-size:12px;color:#6F7E95;padding:0 22px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.k{color:#FF8A5C}.t{color:#8FB0FF}.s{color:#F5C97A}.c{color:#5E6E86;font-style:italic}.f{color:#E7ECF4;font-weight:600}
+.progress{height:2px;background:rgba(255,255,255,.06)}
+.progress i{display:block;height:100%;width:0;background:#FF6B35}
+.progress i.run{animation:fill 6s linear forwards}
+@keyframes fill{to{width:100%}}
+
+/* Sections */
+section{padding:clamp(64px,9vw,112px) 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:48px;align-items:baseline}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:8px}}
+.sec-head .idx{font-family:var(--font-mono);font-size:13px;color:var(--accent)}
+.sec-head h2{font-size:clamp(34px,4.6vw,56px);font-weight:800;letter-spacing:-0.025em}
+
+/* About */
+.about{display:grid;grid-template-columns:200px 1fr 1fr;gap:24px 48px}
+.about > :first-child{grid-column:2}
+@media (max-width:900px){.about{grid-template-columns:1fr}.about > :first-child{grid-column:auto}}
+.about p{max-width:60ch;color:var(--muted)}
+.about p + p{margin-top:16px}
+.about .big{font-family:var(--font-display);font-size:clamp(22px,2.4vw,28px);line-height:1.3;color:var(--ink);font-weight:600}
+
+/* Skills */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.stack article{background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:14px}
+.stack .plat{display:flex;justify-content:space-between;align-items:center}
+.stack h3{font-size:22px;font-weight:700}
+.stack .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--cobalt)}
+.stack p{color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chips span{font-family:var(--font-mono);font-size:12px;padding:5px 9px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+
+/* Soft skills */
+.soft{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;counter-reset:soft}
+@media (max-width:760px){.soft{grid-template-columns:1fr}}
+.soft article{counter-increment:soft;display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 0;border-top:1px solid var(--line)}
+.soft article::before{content:counter(soft,decimal-leading-zero);grid-row:span 2;font-family:var(--font-mono);font-size:13px;color:var(--accent);padding-top:4px}
+.soft h3{font-size:21px;font-weight:700}
+.soft p{color:var(--muted);font-size:15px;max-width:52ch}
+
+/* Work */
+.work{display:flex;flex-direction:column}
+.case{display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start}
+.case:first-child{border-top:1px solid var(--line)}
+@media (max-width:760px){.case{grid-template-columns:1fr;gap:10px}}
+.case .num{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.case h3{font-size:clamp(24px,2.8vw,32px);font-weight:700;margin-bottom:10px;transition:color .2s}
+.case:hover h3{color:var(--accent)}
+.case p{color:var(--muted);max-width:62ch}
+.case ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.case li{padding-left:20px;position:relative}
+.case li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+.case .path{font-family:var(--font-mono);font-size:12px;color:var(--cobalt);white-space:nowrap;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+
+/* Open source */
+.oss{margin-top:56px;display:grid;grid-template-columns:200px 1fr;gap:24px}
+@media (max-width:760px){.oss{grid-template-columns:1fr}}
+.oss-head .idx{font-size:13px;color:var(--accent)}
+.oss-head h3{font-size:22px;font-weight:700;margin-top:6px}
+.repo{display:flex;flex-direction:column;gap:14px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:24px 26px;transition:transform .15s, border-color .15s}
+.repo:hover{transform:translateY(-2px);border-color:var(--accent)}
+.repo-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.repo-name{font-size:15px;color:var(--muted)}.repo-name b{color:var(--ink)}
+.repo-stats{display:flex;gap:14px;font-size:14px;color:var(--ink)}
+.repo p{color:var(--muted);max-width:64ch;font-size:15px}
+.repo-link{font-size:13px;color:var(--cobalt)}
+
+/* Branch graph (career) */
+.graph{position:relative;padding-left:40px}
+.graph::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.node{position:relative;padding:0 0 40px}
+.node:last-child{padding-bottom:0}
+.node::before{content:"";position:absolute;left:-36px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--cobalt)}
+.node.head::before{border-color:var(--accent);background:var(--accent)}
+.node .hash{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.node .hash b{color:var(--accent);font-weight:600}
+.node h3{font-size:22px;font-weight:700;margin:4px 0 6px}
+.node p{color:var(--muted);max-width:64ch}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;counter-increment:s}
+.step::before{content:"0" counter(s);font-family:var(--font-mono);font-size:13px;color:var(--accent);display:block;margin-bottom:28px}
+.step h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--bg);border-top:0}
+.contact .sec-head h2{color:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.contact .pitch{font-family:var(--font-display);font-size:clamp(26px,3vw,38px);font-weight:600;line-height:1.2}
+.contact .pitch span{color:var(--accent)}
+.links{display:flex;flex-direction:column;gap:2px}
+.links a,.links button{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0;border:0;border-bottom:1px solid color-mix(in srgb,var(--bg) 18%,transparent);text-decoration:none;background:none;color:inherit;font:inherit;cursor:pointer;text-align:left;width:100%}
+.links .lbl{font-family:var(--font-mono);font-size:12px;opacity:.6;text-transform:uppercase;letter-spacing:.08em}
+.links .val{font-weight:600;font-size:17px;word-break:break-all}
+.links a:hover .val,.links button:hover .val{color:var(--accent)}
+.copied{font-family:var(--font-mono);font-size:12px;color:var(--accent);min-height:18px;margin-top:10px}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 60%,transparent);font-size:13px;padding:24px 0;border-top:1px solid color-mix(in srgb,var(--bg) 12%,transparent)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:20;display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;font-size:14px;padding:12px 16px 12px 12px;border-radius:999px;box-shadow:0 12px 30px -10px rgba(0,0,0,.45);transition:transform .15s}
+.wa-float:hover{transform:translateY(-2px)}
+.wa-float svg{width:26px;height:26px;flex:none}
+@media (max-width:520px){.wa-float span{display:none}.wa-float{padding:12px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><span>MA</span>Muhammad Adnan</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#soft-skills">Soft skills</a>
+      <a href="#work">Work</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact" class="cta">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="status"><i></i>Open to native &amp; Flutter app projects</span>
+        <h1>Muhammad<br><span class="last">Adnan.</span></h1>
+        <p class="role">Software Engineer &amp; Application Developer. <em>Native iOS (Swift &amp; Objective-C), Android, Flutter.</em></p>
+        <p class="lede">I write native iOS and Android applications from the ground up, build cross-platform apps in Flutter, and keep enterprise apps healthy. When it makes sense, I also move existing native codebases into clean, scalable Flutter, one module at a time.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn ghost" href="https://wa.me/923027885074" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+        <div class="facts">
+          <div><b>4 platforms</b>iOS (Swift &amp; Objective-C) · Android · Flutter · Cross-platform</div>
+          <div><b>Native ↔ Flutter</b>Add-to-app module integration</div>
+          <div><b>AI-assisted</b>Agentic coding workflows</div>
+        </div>
+      </div>
+
+      <div class="panel" aria-label="One feature written in three languages">
+        <div class="panel-top">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="tabs" role="tablist" aria-label="Language">
+            <button role="tab" id="tab-objc" aria-selected="true" data-lang="objc">Objective-C</button>
+            <button role="tab" id="tab-swift" aria-selected="false" data-lang="swift">Swift</button>
+            <button role="tab" id="tab-dart" aria-selected="false" data-lang="dart">Flutter</button>
+          </div>
+        </div>
+        <div class="progress"><i id="bar"></i></div>
+        <pre id="code" role="tabpanel" aria-live="polite"></pre>
+        <div class="file"><span id="fname">LoginViewController.m</span><span id="fnote">legacy · still shipping</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">01 / about</span><h2>The engineer behind the build</h2></div>
+      <div class="about">
+        <p class="big">I build native apps from scratch, and I know when cross-platform is the better choice.</p>
+        <div>
+          <p>I write fully native applications: iOS in Swift and Objective-C, and Android in Kotlin and Java, from the first screen to the App Store and Google Play. I also build cross-platform apps in Flutter. Alongside new builds, a large part of my work is keeping enterprise applications healthy: fixing what breaks, shipping new features into mature codebases, and keeping releases predictable.</p>
+          <p>I also lead modernization. I embed Flutter modules inside existing native apps, wire them up through platform channels, and move features across until the app is ready to run on a single, shared codebase.</p>
+          <p>I use AI-assisted development and agentic coding tools every day to read unfamiliar code faster, refactor safely, and spend my time on the decisions that matter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">02 / stack</span><h2>What I build with</h2></div>
+      <div class="stack">
+        <article>
+          <div class="plat"><h3>Native iOS · Swift &amp; Objective-C</h3><span class="tag">Native</span></div>
+          <p>Native iPhone and iPad applications in Swift and Objective-C, built from scratch or grown inside mature codebases.</p>
+          <div class="chips"><span>Swift</span><span>Objective-C</span><span>UIKit</span><span>SwiftUI</span><span>Combine</span><span>async/await</span><span>GCD</span><span>Core Data</span><span>Auto Layout</span><span>URLSession</span><span>APNs</span><span>CocoaPods</span><span>Swift Package Manager</span><span>XCTest</span><span>Instruments</span><span>Xcode</span><span>TestFlight</span><span>App Store Connect</span></div>
+        </article>
+        <article>
+          <div class="plat"><h3>Android</h3><span class="tag">Native</span></div>
+          <p>Native Android development and maintenance for production apps across a wide range of devices.</p>
+          <div class="chips"><span>Kotlin</span><span>Java</span><span>Android SDK</span><span>Jetpack Compose</span><span>XML layouts</span><span>Coroutines</span><span>ViewModel</span><span>Room</span><span>Retrofit</span><span>Hilt</span><span>FCM</span><span>Gradle</span><span>Android Studio</span><span>Google Play Console</span></div>
+        </article>
+        <article>
+          <div class="plat"><h3>Flutter</h3><span class="tag">Cross-platform</span></div>
+          <p>Scalable Flutter apps built on Clean Architecture, plus add-to-app modules inside existing native projects.</p>
+          <div class="chips"><span>Dart</span><span>Flutter</span><span>Riverpod</span><span>Bloc / Cubit</span><span>Provider</span><span>GetX</span><span>go_router</span><span>Dio</span><span>Hive</span><span>sqflite</span><span>Platform channels</span><span>Method channels</span><span>Add-to-app</span><span>Flavors</span><span>Firebase</span></div>
+        </article>
+        <article>
+          <div class="plat"><h3>Architecture</h3><span class="tag">Design</span></div>
+          <p>Code that stays testable and easy to change as apps and teams grow, on every platform I work on.</p>
+          <div class="chips"><span>Clean Architecture</span><span>SOLID</span><span>MVVM</span><span>MVC</span><span>VIPER</span><span>Coordinator pattern</span><span>Repository pattern</span><span>Dependency injection</span><span>Modularization</span><span>Design patterns</span><span>Offline-first</span></div>
+        </article>
+        <article>
+          <div class="plat"><h3>Quality &amp; integration</h3><span class="tag">Reliability</span></div>
+          <p>Apps that are tested, secure, observable and connected cleanly to backend services.</p>
+          <div class="chips"><span>Unit testing</span><span>Widget testing</span><span>UI testing</span><span>TDD</span><span>REST APIs</span><span>JSON</span><span>OAuth 2.0</span><span>Keychain / Keystore</span><span>Crashlytics</span><span>Analytics</span><span>Performance profiling</span><span>Accessibility</span><span>Localization</span></div>
+        </article>
+        <article>
+          <div class="plat"><h3>Delivery</h3><span class="tag">Workflow</span></div>
+          <p>Disciplined version control, code review and release pipelines, supported by AI-assisted tooling.</p>
+          <div class="chips"><span>Git</span><span>GitFlow</span><span>Pull requests</span><span>Code review</span><span>Azure DevOps</span><span>Azure Pipelines</span><span>Azure Boards</span><span>CI/CD</span><span>Fastlane</span><span>Agile / Scrum</span><span>Jira</span><span>Agentic AI tools</span><span>Claude Code</span><span>GitHub Copilot</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="soft-skills">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">03 / soft skills</span><h2>How I show up for a team</h2></div>
+      <div class="soft">
+        <article><h3>Clear communication</h3><p>I explain technical trade-offs in plain language, so product owners and managers can make decisions with confidence.</p></article>
+        <article><h3>Ownership &amp; accountability</h3><p>I see a task through from ticket to release, and I flag risks early instead of after the deadline.</p></article>
+        <article><h3>Analytical problem-solving</h3><p>I work methodically through unfamiliar legacy code, finding the cause of a bug before reaching for a fix.</p></article>
+        <article><h3>Collaboration</h3><p>I work well with native, Flutter, QA and backend teams, and I give and take code review with respect.</p></article>
+        <article><h3>Adaptability</h3><p>I move comfortably between Objective-C, Swift, Kotlin and Dart, and I pick up new tools quickly, AI tools included.</p></article>
+        <article><h3>Time &amp; priority management</h3><p>I balance maintenance work, new features and store deadlines, and I keep estimates honest.</p></article>
+        <article><h3>Attention to detail</h3><p>I care about edge cases, regressions and polish, the small things users notice and enterprises depend on.</p></article>
+        <article><h3>Knowledge sharing</h3><p>I write clear documentation, mentor teammates and leave codebases easier to work in than I found them.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">04 / work</span><h2>Native, cross-platform and beyond</h2></div>
+      <div class="work">
+        <article class="case">
+          <span class="num">case / 01</span>
+          <div>
+            <h3>Native iOS application development in Swift &amp; Objective-C</h3>
+            <p>Designing, building and shipping native iPhone and iPad apps in Swift and Objective-C, from first screen to App Store release.</p>
+            <ul>
+              <li>Clean Architecture with MVVM or MVC, SOLID principles and dependency injection</li>
+              <li>UIKit and SwiftUI interfaces, with Combine and async/await for data flow</li>
+              <li>REST API integration, Core Data persistence and push notifications</li>
+              <li>Provisioning, TestFlight builds and App Store submission</li>
+            </ul>
+          </div>
+          <span class="path">Swift · Objective-C</span>
+        </article>
+        <article class="case">
+          <span class="num">case / 02</span>
+          <div>
+            <h3>Native Android application development in Kotlin &amp; Java</h3>
+            <p>Building native Android apps from scratch for phones and tablets, from first screen to Google Play release.</p>
+            <ul>
+              <li>Clean Architecture with MVVM, Jetpack ViewModel and Hilt dependency injection</li>
+              <li>Jetpack Compose and XML layouts, with Coroutines for async work</li>
+              <li>Retrofit networking, Room persistence and Firebase push notifications</li>
+              <li>Signed builds, release tracks and Google Play Console publishing</li>
+            </ul>
+          </div>
+          <span class="path">Kotlin · Java</span>
+        </article>
+        <article class="case">
+          <span class="num">case / 03</span>
+          <div>
+            <h3>Native-to-Flutter modernization</h3>
+            <p>Moving an existing enterprise app toward a single Flutter codebase in stages, so users never see a big-bang rewrite.</p>
+            <ul>
+              <li>Audit the native code and pick the features worth moving first</li>
+              <li>Embed Flutter modules and connect them with platform channels</li>
+              <li>Migrate screen by screen until native code can be retired</li>
+            </ul>
+          </div>
+          <span class="path">Obj-C / Swift → Dart</span>
+        </article>
+        <article class="case">
+          <span class="num">case / 04</span>
+          <div>
+            <h3>Enterprise app maintenance</h3>
+            <p>Keeping business-critical iOS and Android apps stable, current and shipping on schedule.</p>
+            <ul>
+              <li>Bug fixing and performance work in mature codebases</li>
+              <li>OS and SDK upgrades handled ahead of store deadlines</li>
+              <li>New features delivered without regressions</li>
+            </ul>
+          </div>
+          <span class="path">iOS + Android</span>
+        </article>
+        <article class="case">
+          <span class="num">case / 05</span>
+          <div>
+            <h3>Hybrid native + Flutter integration</h3>
+            <p>Running native and Flutter code together in one app, with clean boundaries between them.</p>
+            <ul>
+              <li>Two-way communication between native layers and Flutter</li>
+              <li>Shared navigation, state and authentication across both</li>
+              <li>Build setups that work for native and Flutter teams alike</li>
+            </ul>
+          </div>
+          <span class="path">Native ⇄ Flutter</span>
+        </article>
+        <article class="case">
+          <span class="num">case / 06</span>
+          <div>
+            <h3>AI-assisted engineering</h3>
+            <p>Using agentic coding tools to understand legacy code faster and refactor it with confidence.</p>
+            <ul>
+              <li>Code exploration and documentation of legacy modules</li>
+              <li>Refactors and test scaffolding, reviewed by hand</li>
+              <li>Faster delivery with the same quality bar</li>
+            </ul>
+          </div>
+          <span class="path">AI + human review</span>
+        </article>
+      </div>
+
+      <div class="oss">
+        <div class="oss-head">
+          <span class="idx mono">open source</span>
+          <h3>Published on GitHub</h3>
+        </div>
+        <a class="repo" href="https://github.com/Adnan1990/ADCurrencyPicker" target="_blank" rel="noopener">
+          <div class="repo-top">
+            <span class="mono repo-name">Adnan1990 / <b>ADCurrencyPicker</b></span>
+            <span class="mono repo-stats"><span title="Stars">★ 23</span><span title="Forks">⑂ 5</span></span>
+          </div>
+          <p>A reusable iOS control for picking a country and its currency. Users choose from 106 countries, and the picker hands back the country name, country code, currency code and currency symbol through a simple delegate callback.</p>
+          <div class="chips"><span>Objective-C</span><span>UIKit</span><span>Reusable component</span><span>Delegate pattern</span><span>Storyboards</span></div>
+          <span class="repo-link mono">View on GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">05 / journey</span><h2>git log --graph</h2></div>
+      <div class="graph">
+        <div class="node head">
+          <span class="hash"><b>HEAD → main</b> · now</span>
+          <h3>AI-assisted modernization</h3>
+          <p>Bringing agentic coding tools into daily work and turning existing apps into scalable, high-quality Flutter solutions.</p>
+        </div>
+        <div class="node">
+          <span class="hash">merge · flutter-integration</span>
+          <h3>Native and Flutter, together</h3>
+          <p>Integrating Flutter modules into native iOS and Android apps, and building cross-platform features end to end.</p>
+        </div>
+        <div class="node">
+          <span class="hash">branch · enterprise</span>
+          <h3>Enterprise application maintenance</h3>
+          <p>Owning production apps for business users, with releases managed through Git and Azure DevOps.</p>
+        </div>
+        <div class="node">
+          <span class="hash">init · native-mobile</span>
+          <h3>Native mobile foundations</h3>
+          <p>Building iOS apps in Objective-C and Swift, alongside native Android development. Worked as a Senior iOS Application Developer at Exceed IT Services, Islamabad, and published reusable iOS controls such as ADCurrencyPicker as open source.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">06 / process</span><h2>How I work with teams</h2></div>
+      <div class="steps">
+        <div class="step"><h3>Understand</h3><p>Read the codebase and the business needs before touching anything.</p></div>
+        <div class="step"><h3>Plan the path</h3><p>Agree on what to fix, what to keep native and what to move to Flutter.</p></div>
+        <div class="step"><h3>Ship in slices</h3><p>Small, reviewed changes through your existing Git and Azure DevOps flow.</p></div>
+        <div class="step"><h3>Hand over well</h3><p>Clean code and clear docs your team can keep building on.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">07 / contact</span><h2>Let's build something</h2></div>
+      <div class="contact-grid">
+        <p class="pitch">Have an app that needs care, or one that's ready for <span>Flutter</span>? Let's talk.</p>
+        <div>
+          <div class="links" id="links"></div>
+          <p class="copied" id="copied" role="status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Muhammad Adnan</span>
+    <span class="mono">built native-first, shipped cross-platform</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923027885074" target="_blank" rel="noopener" aria-label="Chat with Muhammad Adnan on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FF6B35"/><path fill="#fff" d="M16 7.5a8.4 8.4 0 0 0-7.2 12.8L7.6 24.5l4.3-1.1A8.4 8.4 0 1 0 16 7.5Zm0 15.3a6.9 6.9 0 0 1-3.5-1l-.3-.2-2.5.7.7-2.5-.2-.3A6.9 6.9 0 1 1 16 22.8Zm3.8-5.2c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.5.1l-.6.8c-.1.1-.2.2-.4.1a5.6 5.6 0 0 1-2.8-2.4c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.6-1.5c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 0 0-.6.3 2.4 2.4 0 0 0-.7 1.8 4.2 4.2 0 0 0 .9 2.2 9.5 9.5 0 0 0 3.6 3.2c1.4.6 1.9.6 2.6.5a2.2 2.2 0 0 0 1.4-1c.2-.5.2-.9.1-1-.1-.1-.2-.2-.4-.3Z"/></svg>
+  <span>WhatsApp me</span>
+</a>
+
+<script>
+/* ===== Edit your contact details here ===== */
+const CONTACT = [
+  { label: "Email",    value: "muhammad.adnan1990@gmail.com",      href: "mailto:muhammad.adnan1990@gmail.com", copy: true },
+  { label: "WhatsApp", value: "+92 302 7885074",                   href: "https://wa.me/923027885074?text=" + encodeURIComponent("Hi Muhammad, I found your portfolio and would like to talk about a project.") },
+  { label: "LinkedIn", value: "linkedin.com/in/muhammad-adnan-a3431820", href: "https://www.linkedin.com/in/muhammad-adnan-a3431820/" },
+  { label: "Facebook", value: "facebook.com/adnan.CatchMeIfYouCan", href: "https://www.facebook.com/adnan.CatchMeIfYouCan" },
+  { label: "GitHub",   value: "github.com/Adnan1990",              href: "https://github.com/Adnan1990" }
+];
+
+const SNIPPETS = {
+  objc: { file:"LoginViewController.m", note:"legacy · still shipping", code:
+`<span class="c">// Objective-C: where many enterprise apps began</span>
+<span class="k">- (void)</span><span class="f">loginTapped</span>:(<span class="t">UIButton</span> *)sender {
+    [<span class="k">self</span>.<span class="t">authService</span> loginWithEmail:<span class="k">self</span>.email.text
+                         password:<span class="k">self</span>.password.text
+                       completion:^(<span class="t">User</span> *user, <span class="t">NSError</span> *error) {
+        <span class="k">dispatch_async</span>(dispatch_get_main_queue(), ^{
+            <span class="k">if</span> (error) { [<span class="k">self</span> showError:error]; <span class="k">return</span>; }
+            [<span class="k">self</span> openHomeFor:user];
+        });
+    }];
+}`},
+  swift: { file:"LoginViewController.swift", note:"modern native", code:
+`<span class="c">// Swift: same feature, safer and shorter</span>
+<span class="k">@IBAction func</span> <span class="f">loginTapped</span>(<span class="k">_</span> sender: <span class="t">UIButton</span>) {
+    <span class="t">Task</span> {
+        <span class="k">do</span> {
+            <span class="k">let</span> user = <span class="k">try await</span> authService.login(
+                email: email.text ?? <span class="s">""</span>,
+                password: password.text ?? <span class="s">""</span>)
+            openHome(<span class="k">for</span>: user)
+        } <span class="k">catch</span> { showError(error) }
+    }
+}`},
+  dart: { file:"login_screen.dart", note:"one codebase · iOS + Android", code:
+`<span class="c">// Flutter: one implementation for both platforms</span>
+<span class="t">Future</span>&lt;<span class="k">void</span>&gt; <span class="f">_onLogin</span>() <span class="k">async</span> {
+  <span class="k">try</span> {
+    <span class="k">final</span> user = <span class="k">await</span> ref.read(authProvider).login(
+      email: _email.text,
+      password: _password.text,
+    );
+    <span class="k">if</span> (!mounted) <span class="k">return</span>;
+    context.go(<span class="s">'/home'</span>, extra: user);
+  } <span class="k">on</span> <span class="t">AuthException</span> <span class="k">catch</span> (e) {
+    _showError(e.message);
+  }
+}`}
+};
+
+const order = ["objc","swift","dart"];
+const codeEl = document.getElementById("code");
+const bar = document.getElementById("bar");
+let current = 0, timer = null;
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function show(i, user){
+  current = i;
+  const key = order[i], s = SNIPPETS[key];
+  codeEl.innerHTML = s.code;
+  document.getElementById("fname").textContent = s.file;
+  document.getElementById("fnote").textContent = s.note;
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.lang === key ? "true" : "false"));
+  bar.classList.remove("run"); void bar.offsetWidth;
+  clearTimeout(timer);
+  if (user || reduced) { bar.style.width = "100%"; return; }
+  bar.style.width = ""; bar.classList.add("run");
+  timer = setTimeout(() => show((current + 1) % order.length), 6000);
+}
+document.querySelectorAll(".tabs button").forEach((b, i) => b.addEventListener("click", () => show(i, true)));
+show(0);
+
+const links = document.getElementById("links");
+const copied = document.getElementById("copied");
+CONTACT.forEach(c => {
+  const el = document.createElement(c.copy ? "button" : "a");
+  if (c.copy) el.type = "button"; else { el.href = c.href; el.target = "_blank"; el.rel = "noopener"; }
+  el.innerHTML = `<span><span class="lbl"></span><br><span class="val"></span></span><span aria-hidden="true">${c.copy ? "Copy" : "↗"}</span>`;
+  el.querySelector(".lbl").textContent = c.label;
+  el.querySelector(".val").textContent = c.value;
+  if (c.copy) el.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(c.value); copied.textContent = "Email copied to clipboard."; }
+    catch { copied.textContent = "Copy failed. The address is: " + c.value; }
+  });
+  links.appendChild(el);
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
