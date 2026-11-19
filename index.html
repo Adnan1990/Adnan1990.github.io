@@ -173,7 +173,7 @@ section{padding:clamp(64px,9vw,112px) 0;border-top:1px solid var(--line)}
 .about .big{font-family:var(--font-display);font-size:clamp(22px,2.4vw,28px);line-height:1.3;color:var(--ink);font-weight:600}
 
 /* Skills */
-.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .stack article{background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:14px}
 .stack .plat{display:flex;justify-content:space-between;align-items:center}
 .stack h3{font-size:22px;font-weight:700}
@@ -283,6 +283,58 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .links a,.links button{padding:15px 0}
   .wa-float{right:14px;bottom:14px}
 }
+
+@media (max-width:980px){.stack{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.stack{grid-template-columns:minmax(0,1fr)}}
+.stack .chips{margin-top:6px}
+/* Icons & visuals */
+.ico{display:inline-grid;place-items:center;width:18px;height:18px;flex:none;color:var(--accent)}
+.ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico.big{width:46px;height:46px;padding:11px;border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.stack .plat{align-items:center}
+.stack article:nth-child(3n+2) .ico.big{color:var(--cobalt);background:color-mix(in srgb,var(--cobalt) 12%,transparent)}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+@media (min-width:901px){.about{grid-template-columns:200px 1fr}.about .big,.about-grid{grid-column:2}}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.about-grid{grid-template-columns:1fr 1fr;gap:10px}}
+.pillar{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.pillar .ico.big{margin-bottom:8px}
+.pillar b{font-family:var(--font-display);font-size:19px}
+.pillar span:last-child{color:var(--muted);font-size:14.5px;line-height:1.45}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.fstep{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line)}
+.flow .arrow,.picker .arrow{color:var(--muted);font-family:var(--font-mono)}
+.case p{font-size:16px}
+.picker{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pk{font-family:var(--font-mono);font-size:12.5px;padding:6px 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.soft{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.soft article{display:flex;flex-direction:column;gap:6px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.soft article::before{content:none}
+.soft article .ico.big{margin-bottom:8px}
+.soft h3{font-size:18px}
+.soft p{font-size:14.5px}
+.step::before{content:none}
+.step .ico.big{margin-bottom:18px}
+/* Clean Architecture */
+.arch{margin-top:28px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,4vw,40px)}
+@media (max-width:820px){.arch{grid-template-columns:1fr}.rings{max-width:300px;justify-self:center;width:100%}}
+.arch .idx{font-size:13px;color:var(--accent)}
+.arch h3{font-size:clamp(26px,3vw,34px);font-weight:800;margin:6px 0 10px}
+.arch p{color:var(--muted);max-width:52ch}
+.legend{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.legend li{display:grid;grid-template-columns:14px 1fr;column-gap:12px;font-weight:600;font-size:15px}
+.legend li i{width:14px;height:14px;border-radius:4px;grid-row:span 2;margin-top:4px}
+.legend small{grid-column:2;font-weight:400;color:var(--muted);font-family:var(--font-mono);font-size:12px}
+.l4,.r4{background:color-mix(in srgb,var(--cobalt) 14%,var(--surface));fill:color-mix(in srgb,var(--cobalt) 14%,var(--surface))}
+.l3,.r3{background:color-mix(in srgb,var(--cobalt) 32%,var(--surface));fill:color-mix(in srgb,var(--cobalt) 32%,var(--surface))}
+.l2,.r2{background:color-mix(in srgb,var(--accent) 45%,var(--surface));fill:color-mix(in srgb,var(--accent) 45%,var(--surface))}
+.l1,.r1{background:var(--accent);fill:var(--accent)}
+.rings circle{stroke:var(--surface);stroke-width:2}
+.rl{font-family:var(--font-mono);font-size:10px;font-weight:600;text-anchor:middle;fill:var(--ink);letter-spacing:.06em}
+.rl.core{fill:#fff;font-size:10.5px}
+.rl.dim{fill:var(--muted);font-weight:400;letter-spacing:0}
+.dep path{stroke:var(--ink);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+@media (max-width:600px){.flow{display:grid;grid-template-columns:1fr 1fr;gap:8px;counter-reset:fl}.flow .arrow{display:none}.fstep{font-size:13px;padding:8px 10px;counter-increment:fl}.fstep::before{content:counter(fl);font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-right:-2px}.pillar{padding:16px}.soft article{padding:16px}}
 </style>
 </head>
 <body>
@@ -342,10 +394,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="sec-head"><span class="idx">01 / about</span><h2>The engineer behind the build</h2></div>
       <div class="about">
         <p class="big">I build native apps from scratch, and I know when cross-platform is the better choice.</p>
-        <div>
-          <p>I write fully native applications: iOS in Swift and Objective-C, and Android in Kotlin and Java, from the first screen to the App Store and Google Play. I also build cross-platform apps in Flutter. Alongside new builds, a large part of my work is keeping enterprise applications healthy: fixing what breaks, shipping new features into mature codebases, and keeping releases predictable.</p>
-          <p>I also lead modernization. I embed Flutter modules inside existing native apps, wire them up through platform channels, and move features across until the app is ready to run on a single, shared codebase.</p>
-          <p>I use AI-assisted development and agentic coding tools every day to read unfamiliar code faster, refactor safely, and spend my time on the decisions that matter.</p>
+        <div class="about-grid">
+          <div class="pillar"><span class="ico big" data-icon="phone"></span><b>Native apps</b><span>iOS and Android, built from scratch</span></div>
+          <div class="pillar"><span class="ico big" data-icon="phones"></span><b>Flutter</b><span>One codebase for both platforms</span></div>
+          <div class="pillar"><span class="ico big" data-icon="wrench"></span><b>Enterprise care</b><span>Stable apps, regular releases</span></div>
+          <div class="pillar"><span class="ico big" data-icon="spark"></span><b>AI-assisted</b><span>Agentic tools, human review</span></div>
         </div>
       </div>
     </div>
@@ -356,35 +409,67 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="sec-head"><span class="idx">02 / stack</span><h2>What I build with</h2></div>
       <div class="stack">
         <article>
-          <div class="plat"><h3>Native iOS · Swift &amp; Objective-C</h3><span class="tag">Native</span></div>
-          <p>Native iPhone and iPad applications in Swift and Objective-C, built from scratch or grown inside mature codebases.</p>
+          <div class="plat"><span class="ico big" data-icon="phone"></span><span class="tag">Native</span></div>
+          <h3>Native iOS · Swift &amp; Objective-C</h3>
+          <p>iPhone and iPad apps.</p>
           <div class="chips"><span>Swift</span><span>Objective-C</span><span>UIKit</span><span>SwiftUI</span><span>Combine</span><span>async/await</span><span>GCD</span><span>Core Data</span><span>Auto Layout</span><span>URLSession</span><span>APNs</span><span>CocoaPods</span><span>Swift Package Manager</span><span>XCTest</span><span>Instruments</span><span>Xcode</span><span>TestFlight</span><span>App Store Connect</span></div>
         </article>
         <article>
-          <div class="plat"><h3>Android</h3><span class="tag">Native</span></div>
-          <p>Native Android development and maintenance for production apps across a wide range of devices.</p>
+          <div class="plat"><span class="ico big" data-icon="phone-a"></span><span class="tag">Native</span></div>
+          <h3>Native Android · Kotlin &amp; Java</h3>
+          <p>Phone and tablet apps.</p>
           <div class="chips"><span>Kotlin</span><span>Java</span><span>Android SDK</span><span>Jetpack Compose</span><span>XML layouts</span><span>Coroutines</span><span>ViewModel</span><span>Room</span><span>Retrofit</span><span>Hilt</span><span>FCM</span><span>Gradle</span><span>Android Studio</span><span>Google Play Console</span></div>
         </article>
         <article>
-          <div class="plat"><h3>Flutter</h3><span class="tag">Cross-platform</span></div>
-          <p>Scalable Flutter apps built on Clean Architecture, plus add-to-app modules inside existing native projects.</p>
+          <div class="plat"><span class="ico big" data-icon="phones"></span><span class="tag">Cross-platform</span></div>
+          <h3>Flutter</h3>
+          <p>One codebase, iOS and Android.</p>
           <div class="chips"><span>Dart</span><span>Flutter</span><span>Riverpod</span><span>Bloc / Cubit</span><span>Provider</span><span>GetX</span><span>go_router</span><span>Dio</span><span>Hive</span><span>sqflite</span><span>Platform channels</span><span>Method channels</span><span>Add-to-app</span><span>Flavors</span><span>Firebase</span></div>
         </article>
         <article>
-          <div class="plat"><h3>Architecture</h3><span class="tag">Design</span></div>
-          <p>Code that stays testable and easy to change as apps and teams grow, on every platform I work on.</p>
+          <div class="plat"><span class="ico big" data-icon="layers"></span><span class="tag">Design</span></div>
+          <h3>Architecture</h3>
+          <p>Testable, easy to change.</p>
           <div class="chips"><span>Clean Architecture</span><span>SOLID</span><span>MVVM</span><span>MVC</span><span>VIPER</span><span>Coordinator pattern</span><span>Repository pattern</span><span>Dependency injection</span><span>Modularization</span><span>Design patterns</span><span>Offline-first</span></div>
         </article>
         <article>
-          <div class="plat"><h3>Quality &amp; integration</h3><span class="tag">Reliability</span></div>
-          <p>Apps that are tested, secure, observable and connected cleanly to backend services.</p>
+          <div class="plat"><span class="ico big" data-icon="shield"></span><span class="tag">Reliability</span></div>
+          <h3>Quality &amp; integration</h3>
+          <p>Tested, secure, connected.</p>
           <div class="chips"><span>Unit testing</span><span>Widget testing</span><span>UI testing</span><span>TDD</span><span>REST APIs</span><span>JSON</span><span>OAuth 2.0</span><span>Keychain / Keystore</span><span>Crashlytics</span><span>Analytics</span><span>Performance profiling</span><span>Accessibility</span><span>Localization</span></div>
         </article>
         <article>
-          <div class="plat"><h3>Delivery</h3><span class="tag">Workflow</span></div>
-          <p>Disciplined version control, code review and release pipelines, supported by AI-assisted tooling.</p>
+          <div class="plat"><span class="ico big" data-icon="branch"></span><span class="tag">Workflow</span></div>
+          <h3>Delivery</h3>
+          <p>Git, pipelines, AI tools.</p>
           <div class="chips"><span>Git</span><span>GitFlow</span><span>Pull requests</span><span>Code review</span><span>Azure DevOps</span><span>Azure Pipelines</span><span>Azure Boards</span><span>CI/CD</span><span>Fastlane</span><span>Agile / Scrum</span><span>Jira</span><span>Agentic AI tools</span><span>Claude Code</span><span>GitHub Copilot</span></div>
         </article>
+      </div>
+
+      <div class="arch">
+        <div class="arch-text">
+          <span class="idx mono">how I structure apps</span>
+          <h3>Clean Architecture</h3>
+          <p>Business logic sits at the centre. UI and frameworks stay on the outside, so they can change without breaking the core.</p>
+          <ul class="legend">
+            <li><i class="l4"></i>UI &amp; frameworks <small>UIKit · SwiftUI · Compose · Flutter widgets</small></li>
+            <li><i class="l3"></i>Presentation <small>ViewModels · Bloc · Riverpod</small></li>
+            <li><i class="l2"></i>Use cases <small>App-specific business rules</small></li>
+            <li><i class="l1"></i>Entities <small>Core models, pure code</small></li>
+          </ul>
+        </div>
+        <svg class="rings" viewBox="0 0 320 320" role="img" aria-label="Clean Architecture diagram: four rings, with Entities at the centre and UI and frameworks on the outside. Dependencies point inward.">
+          <circle class="r4" cx="160" cy="160" r="150"/>
+          <circle class="r3" cx="160" cy="160" r="112"/>
+          <circle class="r2" cx="160" cy="160" r="74"/>
+          <circle class="r1" cx="160" cy="160" r="38"/>
+          <text x="160" y="36" class="rl">UI &amp; FRAMEWORKS</text>
+          <text x="160" y="74" class="rl">PRESENTATION</text>
+          <text x="160" y="111" class="rl">USE CASES</text>
+          <text x="160" y="164" class="rl core">ENTITIES</text>
+          <g class="dep"><path d="M296 160h-36"/><path d="M268 154l-8 6 8 6"/><path d="M24 160h36"/><path d="M52 154l8 6-8 6"/></g>
+          <text x="160" y="300" class="rl dim">dependencies point inward</text>
+        </svg>
       </div>
     </div>
   </section>
@@ -393,14 +478,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="sec-head"><span class="idx">03 / soft skills</span><h2>How I show up for a team</h2></div>
       <div class="soft">
-        <article><h3>Clear communication</h3><p>I explain technical trade-offs in plain language, so product owners and managers can make decisions with confidence.</p></article>
-        <article><h3>Ownership &amp; accountability</h3><p>I see a task through from ticket to release, and I flag risks early instead of after the deadline.</p></article>
-        <article><h3>Analytical problem-solving</h3><p>I work methodically through unfamiliar legacy code, finding the cause of a bug before reaching for a fix.</p></article>
-        <article><h3>Collaboration</h3><p>I work well with native, Flutter, QA and backend teams, and I give and take code review with respect.</p></article>
-        <article><h3>Adaptability</h3><p>I move comfortably between Objective-C, Swift, Kotlin and Dart, and I pick up new tools quickly, AI tools included.</p></article>
-        <article><h3>Time &amp; priority management</h3><p>I balance maintenance work, new features and store deadlines, and I keep estimates honest.</p></article>
-        <article><h3>Attention to detail</h3><p>I care about edge cases, regressions and polish, the small things users notice and enterprises depend on.</p></article>
-        <article><h3>Knowledge sharing</h3><p>I write clear documentation, mentor teammates and leave codebases easier to work in than I found them.</p></article>
+        <article><span class="ico big" data-icon="chat"></span><h3>Clear communication</h3><p>Tech explained in plain words</p></article>
+        <article><span class="ico big" data-icon="flag"></span><h3>Ownership</h3><p>Ticket to release, risks raised early</p></article>
+        <article><span class="ico big" data-icon="search"></span><h3>Problem-solving</h3><p>Root cause before the fix</p></article>
+        <article><span class="ico big" data-icon="team"></span><h3>Collaboration</h3><p>Native, Flutter, QA and backend teams</p></article>
+        <article><span class="ico big" data-icon="refresh"></span><h3>Adaptability</h3><p>Four languages, new tools fast</p></article>
+        <article><span class="ico big" data-icon="clock"></span><h3>Time management</h3><p>Honest estimates, deadlines met</p></article>
+        <article><span class="ico big" data-icon="eye"></span><h3>Attention to detail</h3><p>Edge cases and polish</p></article>
+        <article><span class="ico big" data-icon="book"></span><h3>Knowledge sharing</h3><p>Docs, mentoring, cleaner code</p></article>
       </div>
     </div>
   </section>
@@ -412,28 +497,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <article class="case">
           <span class="num">case / 01</span>
           <div>
-            <h3>Native iOS application development in Swift &amp; Objective-C</h3>
-            <p>Designing, building and shipping native iPhone and iPad apps in Swift and Objective-C, from first screen to App Store release.</p>
-            <ul>
-              <li>Clean Architecture with MVVM or MVC, SOLID principles and dependency injection</li>
-              <li>UIKit and SwiftUI interfaces, with Combine and async/await for data flow</li>
-              <li>REST API integration, Core Data persistence and push notifications</li>
-              <li>Provisioning, TestFlight builds and App Store submission</li>
-            </ul>
+            <h3>Native iOS apps</h3>
+            <p>iPhone and iPad apps in Swift &amp; Objective-C.</p>
+            <div class="flow"><span class="fstep"><span class="ico" data-icon="pen"></span>Design</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="code"></span>Build</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="test"></span>TestFlight</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="rocket"></span>App Store</span></div>
           </div>
           <span class="path">Swift · Objective-C</span>
         </article>
         <article class="case">
           <span class="num">case / 02</span>
           <div>
-            <h3>Native Android application development in Kotlin &amp; Java</h3>
-            <p>Building native Android apps from scratch for phones and tablets, from first screen to Google Play release.</p>
-            <ul>
-              <li>Clean Architecture with MVVM, Jetpack ViewModel and Hilt dependency injection</li>
-              <li>Jetpack Compose and XML layouts, with Coroutines for async work</li>
-              <li>Retrofit networking, Room persistence and Firebase push notifications</li>
-              <li>Signed builds, release tracks and Google Play Console publishing</li>
-            </ul>
+            <h3>Native Android apps</h3>
+            <p>Phone and tablet apps in Kotlin &amp; Java.</p>
+            <div class="flow"><span class="fstep"><span class="ico" data-icon="pen"></span>Design</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="code"></span>Build</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="test"></span>Testing track</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="rocket"></span>Google Play</span></div>
           </div>
           <span class="path">Kotlin · Java</span>
         </article>
@@ -441,12 +516,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <span class="num">case / 03</span>
           <div>
             <h3>Native-to-Flutter modernization</h3>
-            <p>Moving an existing enterprise app toward a single Flutter codebase in stages, so users never see a big-bang rewrite.</p>
-            <ul>
-              <li>Audit the native code and pick the features worth moving first</li>
-              <li>Embed Flutter modules and connect them with platform channels</li>
-              <li>Migrate screen by screen until native code can be retired</li>
-            </ul>
+            <p>Move to one codebase in stages, with no big-bang rewrite.</p>
+            <div class="flow"><span class="fstep"><span class="ico" data-icon="phone"></span>Native app</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="box"></span>Flutter module</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="phones"></span>Hybrid app</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="check"></span>One Flutter app</span></div>
           </div>
           <span class="path">Obj-C / Swift → Dart</span>
         </article>
@@ -454,25 +525,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <span class="num">case / 04</span>
           <div>
             <h3>Enterprise app maintenance</h3>
-            <p>Keeping business-critical iOS and Android apps stable, current and shipping on schedule.</p>
-            <ul>
-              <li>Bug fixing and performance work in mature codebases</li>
-              <li>OS and SDK upgrades handled ahead of store deadlines</li>
-              <li>New features delivered without regressions</li>
-            </ul>
+            <p>Business-critical apps kept stable and current.</p>
+            <div class="flow"><span class="fstep"><span class="ico" data-icon="bug"></span>Issue</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="wrench"></span>Fix</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="test"></span>Test</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="rocket"></span>Release</span></div>
           </div>
           <span class="path">iOS + Android</span>
         </article>
         <article class="case">
           <span class="num">case / 05</span>
           <div>
-            <h3>Hybrid native + Flutter integration</h3>
-            <p>Running native and Flutter code together in one app, with clean boundaries between them.</p>
-            <ul>
-              <li>Two-way communication between native layers and Flutter</li>
-              <li>Shared navigation, state and authentication across both</li>
-              <li>Build setups that work for native and Flutter teams alike</li>
-            </ul>
+            <h3>Native + Flutter integration</h3>
+            <p>Native and Flutter code working together in one app.</p>
+            <div class="flow"><span class="fstep"><span class="ico" data-icon="phone"></span>Native layer</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="swap"></span>Platform channels</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="phones"></span>Flutter layer</span></div>
           </div>
           <span class="path">Native ⇄ Flutter</span>
         </article>
@@ -480,12 +543,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <span class="num">case / 06</span>
           <div>
             <h3>AI-assisted engineering</h3>
-            <p>Using agentic coding tools to understand legacy code faster and refactor it with confidence.</p>
-            <ul>
-              <li>Code exploration and documentation of legacy modules</li>
-              <li>Refactors and test scaffolding, reviewed by hand</li>
-              <li>Faster delivery with the same quality bar</li>
-            </ul>
+            <p>Legacy code understood faster, refactored with confidence.</p>
+            <div class="flow"><span class="fstep"><span class="ico" data-icon="code"></span>Legacy code</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="spark"></span>AI analysis</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="eye"></span>Human review</span><span class="arrow" aria-hidden="true">→</span><span class="fstep"><span class="ico" data-icon="check"></span>Clean code</span></div>
           </div>
           <span class="path">AI + human review</span>
         </article>
@@ -501,7 +560,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <span class="mono repo-name">Adnan1990 / <b>ADCurrencyPicker</b></span>
             <span class="mono repo-stats"><span title="Stars">★ 23</span><span title="Forks">⑂ 5</span></span>
           </div>
-          <p>A reusable iOS control for picking a country and its currency. Users choose from 106 countries, and the picker hands back the country name, country code, currency code and currency symbol through a simple delegate callback.</p>
+          <div class="picker" aria-hidden="true"><span class="pk">106 countries</span><span class="arrow">→</span><span class="pk">Country name · code</span><span class="pk">Currency code · symbol</span></div>
+          <p>Reusable iOS control for picking a country and its currency.</p>
           <div class="chips"><span>Objective-C</span><span>UIKit</span><span>Reusable component</span><span>Delegate pattern</span><span>Storyboards</span></div>
           <span class="repo-link mono">View on GitHub ↗</span>
         </a>
@@ -516,22 +576,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="node head">
           <span class="hash"><b>HEAD → main</b> · now</span>
           <h3>AI-assisted modernization</h3>
-          <p>Bringing agentic coding tools into daily work and turning existing apps into scalable, high-quality Flutter solutions.</p>
+          <p>Agentic coding tools in daily work. Existing apps turned into scalable Flutter.</p>
         </div>
         <div class="node">
           <span class="hash">merge · flutter-integration</span>
           <h3>Native and Flutter, together</h3>
-          <p>Integrating Flutter modules into native iOS and Android apps, and building cross-platform features end to end.</p>
+          <p>Flutter modules inside native iOS and Android apps.</p>
         </div>
         <div class="node">
           <span class="hash">branch · enterprise</span>
           <h3>Enterprise application maintenance</h3>
-          <p>Owning production apps for business users, with releases managed through Git and Azure DevOps.</p>
+          <p>Production apps for business users, shipped through Git and Azure DevOps.</p>
         </div>
         <div class="node">
           <span class="hash">init · native-mobile</span>
           <h3>Native mobile foundations</h3>
-          <p>Building iOS apps in Objective-C and Swift, alongside native Android development. Worked as a Senior iOS Application Developer at Exceed IT Services, Islamabad, and published reusable iOS controls such as ADCurrencyPicker as open source.</p>
+          <p>Senior iOS Application Developer at Exceed IT Services, Islamabad. Native iOS (Objective-C, Swift) and Android. Open-source iOS controls.</p>
         </div>
       </div>
     </div>
@@ -541,10 +601,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="sec-head"><span class="idx">06 / process</span><h2>How I work with teams</h2></div>
       <div class="steps">
-        <div class="step"><h3>Understand</h3><p>Read the codebase and the business needs before touching anything.</p></div>
-        <div class="step"><h3>Plan the path</h3><p>Agree on what to fix, what to keep native and what to move to Flutter.</p></div>
-        <div class="step"><h3>Ship in slices</h3><p>Small, reviewed changes through your existing Git and Azure DevOps flow.</p></div>
-        <div class="step"><h3>Hand over well</h3><p>Clean code and clear docs your team can keep building on.</p></div>
+        <div class="step"><span class="ico big" data-icon="search"></span><h3>Understand</h3><p>Code and business first</p></div>
+        <div class="step"><span class="ico big" data-icon="map"></span><h3>Plan</h3><p>Native, Flutter, or both</p></div>
+        <div class="step"><span class="ico big" data-icon="layers"></span><h3>Ship in slices</h3><p>Small, reviewed releases</p></div>
+        <div class="step"><span class="ico big" data-icon="handoff"></span><h3>Hand over</h3><p>Clean code, clear docs</p></div>
       </div>
     </div>
   </section>
@@ -665,6 +725,35 @@ CONTACT.forEach(c => {
   });
   links.appendChild(el);
 });
+const ICONS={
+phone:'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4"/><path d="M11 19h2"/>',
+"phone-a":'<rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="5.2" r=".7"/><path d="M9 19h6"/>',
+phones:'<rect x="2.5" y="5" width="9" height="15" rx="2"/><rect x="12.5" y="4" width="9" height="15" rx="2"/><path d="M9.5 11.5h5"/>',
+layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17.5l9 5 9-5" opacity=".5"/>',
+shield:'<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+branch:'<circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 7v10"/><path d="M18 10c0 4-6 3.5-11.2 7.3"/>',
+wrench:'<path d="M14.7 6.3a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.7-7.7z"/><path d="M14.7 6.3L17 4l3 3-2.3 2.3"/>',
+spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
+chat:'<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+flag:'<path d="M5 21V4"/><path d="M5 4h12l-2 4 2 4H5"/>',
+search:'<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/>',
+team:'<circle cx="8.5" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M14.5 14.3c3.3-.4 6 1.4 6.5 4.7"/>',
+refresh:'<path d="M20 11a8 8 0 0 0-14.3-4.3L4 9"/><path d="M4 4v5h5"/><path d="M4 13a8 8 0 0 0 14.3 4.3L20 15"/><path d="M20 20v-5h-5"/>',
+clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>',
+book:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/>',
+map:'<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+handoff:'<path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>',
+pen:'<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>',
+code:'<path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M13.5 4.5l-3 15"/>',
+test:'<path d="M9 3h6"/><path d="M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/>',
+rocket:'<path d="M12 15c-1.5 0-3-1.5-3-3 0-5 3-9 3-9s3 4 3 9c0 1.5-1.5 3-3 3z"/><path d="M9 12l-3 3 1 4 3-2M15 12l3 3-1 4-3-2"/><path d="M12 15v6"/>',
+box:'<path d="M3 7.5l9-4.5 9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/>',
+check:'<circle cx="12" cy="12" r="8.5"/><path d="M8 12.2l2.8 2.8L16.5 9"/>',
+bug:'<rect x="7" y="7" width="10" height="13" rx="5"/><path d="M12 11v9M7 12H3M21 12h-4M7 16.5H4M20 16.5h-3M9 7.5L7 4M15 7.5L17 4"/>',
+swap:'<path d="M4 8h14l-3-3"/><path d="M20 16H6l3 3"/>'
+};
+document.querySelectorAll("[data-icon]").forEach(el=>{const d=ICONS[el.dataset.icon]; if(d){el.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+d+'</svg>';}});
 const menuBtn=document.getElementById("menu-btn"), siteNav=document.getElementById("site-nav");
 function setMenu(open){siteNav.classList.toggle("open",open);menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"Close menu":"Open menu");}
 menuBtn.addEventListener("click",()=>setMenu(!siteNav.classList.contains("open")));
@@ -673,5 +762,4 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false);});
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
-<!-- build 202611191602 -->
 </html>
